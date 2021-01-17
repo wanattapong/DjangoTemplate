@@ -1,0 +1,2 @@
+# DjangoTemplate
+Django default settings.
