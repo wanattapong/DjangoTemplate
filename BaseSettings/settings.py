@@ -36,8 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'livesync', # auto refresh DEBUG = True
+    'livesync', # auto refresh DEBUG = True
     'django.contrib.staticfiles',
+
+    'BackEnd',
+    'BaseApp',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'livesync.core.middleware.DjangoLiveSyncMiddleware', # auto refresh DEBUG = True
+    'livesync.core.middleware.DjangoLiveSyncMiddleware', # auto refresh DEBUG = True
 ]
 
 ROOT_URLCONF = 'BaseSettings.urls'
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'BaseSettings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [], # os.path.join(BASE_DIR, 'BaseApp/templates')
+        'DIRS': [], # if you use only own template >> os.path.join(BASE_DIR, 'BaseApp/templates')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,12 +125,12 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # If you have static files in the app
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "BackEnd/static"),
-    os.path.join(BASE_DIR, "BaseApp/static"),
-    # '/var/www/static/',
+    os.path.join(BASE_DIR, 'static'),
+    # os.path.join(BASE_DIR, 'BaseApp/static'),
+    # os.path.join(BASE_DIR, 'BackEnd/static'),
 ]
-
 MEDIA_URL = '/media/'
 MEDIA_URL_ROOT = os.path.join(BASE_DIR, 'media')

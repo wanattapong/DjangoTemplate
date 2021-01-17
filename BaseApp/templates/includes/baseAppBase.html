@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static i18n %}
+{% load i18n %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block style %}
+
+    {% endblock style %}
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Content here -->
+        <h1>Hello word BaseApp</h1>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <script src="{% static 'baseApp/baseapp.js' %}"></script>
+
+    {% block script %}
+
+    {% endblock script %}
+
+</body>
+
+</html>
